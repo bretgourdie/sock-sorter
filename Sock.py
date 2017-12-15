@@ -10,3 +10,7 @@ class Sock:
     def __eq__(self, other):
         return self.__dict__ == other.__dict__
 
+    def __repr__(self):
+        strSock = "Sock: {}; {}; {}, {}, {}".format(self.color, self.length, self.material, self.pattern, self.size)
+
+        return strSock
