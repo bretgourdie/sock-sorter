@@ -3,8 +3,9 @@ import inspect
 class SockPileGenerator:
 
     def __init__(self):
+        1 + 1
 
-    def generatePile(numberOfSocks, templateSock):
+    def generatePile(self, numberOfSocks, templateSock):
         sockPile = []
 
         isEvenNumberOfSocks = numberOfSocks % 2 == 0
@@ -20,7 +21,7 @@ class SockPileGenerator:
             sockPile.append(rightSock)
 
         return sockPile
-    
+
     def generateSock(templateSock):
         sock = Sock()
 
