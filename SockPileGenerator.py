@@ -1,4 +1,5 @@
 from Sock import Sock
+from copy import copy
 import inspect, SockEnums, random
 
 class SockPileGenerator:
