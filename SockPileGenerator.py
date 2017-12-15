@@ -15,7 +15,7 @@ class SockPileGenerator:
         sock = Sock()
 
         for property, value in vars(templateSock).iteritems():
-            setattr(sock, value or getRandomEnum(property))
+            setattr(sock, value or self.getRandomEnum(property))
 
         return sock
 
@@ -26,8 +26,8 @@ class SockPileGenerator:
         if not isEvenNumberOfSocks:
             numberOfSocks -= 1
 
-        for sock in range(numberOfSocks // 2):
-            sockDesign = generateSock(templateSock)
+        for sock in range(numberOfSocks // 2): # always generate pairs
+            sockDesign = self.generateSock(templateSock)
             leftSock = copy(sockDesign)
             rightSock = copy(sockDesign)
 
