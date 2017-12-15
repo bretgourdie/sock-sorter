@@ -12,7 +12,7 @@ class SockPileGenerator:
         if not isEvenNumberOfSocks:
             numberOfSocks -= 1
 
-        for sock in range(numberOfSocks / 2):
+        for sock in range(numberOfSocks // 2):
             sockDesign = generateSock(templateSock)
             leftSock = copy(sockDesign)
             rightSock = copy(sockDesign)
