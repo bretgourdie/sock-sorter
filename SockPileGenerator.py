@@ -2,6 +2,8 @@ import inspect
 
 class SockPileGenerator:
 
+    def __init__(self):
+
     def generatePile(numberOfSocks, templateSock):
         sockPile = []
 
