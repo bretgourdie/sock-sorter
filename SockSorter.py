@@ -3,11 +3,12 @@ import Sock, SockEnums, SockPileGenerator
 class SockSorter():
     sockPileGenerator = SockPileGenerator()
 
-    templateSock = Sock()
-    templateSock.length = Length.Ankle
-    templateSock.material = Material.Cotton
-    templateSock.pattern = Pattern.Plain
-    templateSock.size = Size.Medium
+    templateSock = Sock(
+        None,
+        Length.Ankle,
+        Material.Cotton,
+        Pattern.Plain,
+        Size.Medium)
 
     pile = sockPileGenerator.generatePile(10, templateSock)
 
