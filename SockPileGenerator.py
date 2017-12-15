@@ -35,5 +35,7 @@ class SockPileGenerator:
             sockPile.append(leftSock)
             sockPile.append(rightSock)
 
+        random.shuffle(sockPile)
+
         return sockPile
 
