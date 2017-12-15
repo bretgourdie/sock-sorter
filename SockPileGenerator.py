@@ -15,7 +15,7 @@ class SockPileGenerator:
         sock = Sock()
 
         for property, value in vars(templateSock).items():
-            setattr(sock, value or self.getRandomEnum(property))
+            setattr(sock, property, value or self.getRandomEnum(property))
 
         return sock
 
