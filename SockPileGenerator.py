@@ -22,7 +22,7 @@ class SockPileGenerator:
 
         return sockPile
 
-    def generateSock(templateSock):
+    def generateSock(self, templateSock):
         sock = Sock()
 
         for property, value in vars(templateSock).iteritems():
@@ -30,7 +30,7 @@ class SockPileGenerator:
 
         return sock
 
-    def getRandomEnum(propertyName):
+    def getRandomEnum(self, propertyName):
         for name, obj in inspect.getmembers(SockEnums):
             if inspect.isclass(obj) and propertyName.title() == name:
                 return random.choice(list(obj))
