@@ -1,14 +1,9 @@
 import Sock, SockEnums, SockPileGenerator
 
 class SockSorter():
-    sockPileGenerator = SockPileGenerator()
+    sockPileGenerator = SockPileGenerator.SockPileGenerator()
 
-    templateSock = Sock(
-        None,
-        Length.Ankle,
-        Material.Cotton,
-        Pattern.Plain,
-        Size.Medium)
+    templateSock = Sock.Sock(None, SockEnums.Length.Ankle, SockEnums.Material.Cotton, SockEnums.Pattern.Plain, SockEnums.Size.Medium)
 
     pile = sockPileGenerator.generatePile(10, templateSock)
 
