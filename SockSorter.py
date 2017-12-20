@@ -1,16 +1,36 @@
-import Sock, SockEnums, SockPileGenerator
+import SockEnums, SockPileGenerator
+from Sock import Sock
+from SelectionSort import SelectionSort
 
 class SockSorter():
+
+    def getSortingMethod(self):
+        return SelectionSort()
+
+    def getNumberOfSocks(self):
+        return 10000
+
+    def getTemplateSock(self):
+        return Sock(None, SockEnums.Length.Ankle, SockEnums.Material.Cotton, SockEnums.Pattern.Plain, SockEnums.Size.Medium)
+
+    def printMatches(self):
+        return False
 
     def run(self):
         sockPileGenerator = SockPileGenerator.SockPileGenerator()
 
-        templateSock = Sock.Sock(None, SockEnums.Length.Ankle, SockEnums.Material.Cotton, SockEnums.Pattern.Plain, SockEnums.Size.Medium)
+        templateSock = self.getTemplateSock()
+        numberOfSocks = self.getNumberOfSocks()
 
-        pile = sockPileGenerator.generatePile(10, templateSock)
+        pile = sockPileGenerator.generatePile(numberOfSocks, templateSock)
 
-        for sock in pile:
-            print(sock)
+        sorter = self.getSortingMethod()
+
+        sortedPile = sorter.timedSort(pile)
+
+        if self.printMatches():
+            for pair in sortedPile:
+                print("Pair: {}<->{}".format(pair[0], pair[1]))
 
 if __name__ == "__main__":
     app = SockSorter()
