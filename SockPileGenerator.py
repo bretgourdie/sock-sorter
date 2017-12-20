@@ -4,9 +4,6 @@ import inspect, SockEnums, random
 
 class SockPileGenerator:
 
-    def __init__(self):
-        1 + 1
-
     def getRandomEnum(self, propertyName):
         for name, obj in inspect.getmembers(SockEnums):
             if inspect.isclass(obj) and propertyName.title() == name:
