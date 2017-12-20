@@ -1,4 +1,5 @@
-import SockEnums, SockPileGenerator
+import SockEnums
+from Basket import Basket
 from Sock import Sock
 from SelectionSort import SelectionSort
 
@@ -17,12 +18,12 @@ class SockSorter():
         return False
 
     def run(self):
-        sockPileGenerator = SockPileGenerator.SockPileGenerator()
+        basket = Basket()
 
         templateSock = self.getTemplateSock()
         numberOfSocks = self.getNumberOfSocks()
 
-        pile = sockPileGenerator.generatePile(numberOfSocks, templateSock)
+        pile = basket.dumpPile(numberOfSocks, templateSock)
 
         sorter = self.getSortingMethod()
 

@@ -2,7 +2,7 @@ from Sock import Sock
 from copy import copy
 import inspect, SockEnums, random
 
-class SockPileGenerator:
+class Basket:
 
     def getRandomEnum(self, propertyName):
         for name, obj in inspect.getmembers(SockEnums):
@@ -17,7 +17,7 @@ class SockPileGenerator:
 
         return sock
 
-    def generatePile(self, numberOfSocks, templateSock):
+    def dumpPile(self, numberOfSocks, templateSock):
         sockPile = []
 
         isEvenNumberOfSocks = numberOfSocks % 2 == 0
