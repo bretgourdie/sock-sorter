@@ -1,4 +1,4 @@
-import SockEnums
+import SockEnums, sys
 from Basket import Basket
 from Sock import Sock
 from SelectionSort import SelectionSort
@@ -7,20 +7,17 @@ from SortingMethod import SortingMethod
 
 class SockSorter():
 
-    def getNumberOfSocks(self):
-        return 10000
-
     def getTemplateSock(self):
         return Sock(None, SockEnums.Length.Ankle, SockEnums.Material.Cotton, SockEnums.Pattern.Plain, SockEnums.Size.Medium)
 
     def printMatches(self):
         return False
 
-    def run(self):
+    def run(self, strNumSocks):
         basket = Basket()
 
         templateSock = self.getTemplateSock()
-        numberOfSocks = self.getNumberOfSocks()
+        numberOfSocks = int(strNumSocks)
 
         pile = basket.dumpPile(numberOfSocks, templateSock)
 
@@ -34,5 +31,10 @@ class SockSorter():
                     print("Pair: {}<->{}".format(pair[0], pair[1]))
 
 if __name__ == "__main__":
-    app = SockSorter()
-    app.run()
+    minNumberOfArguments = 1
+    if len(sys.argv) > minNumberOfArguments:
+        app = SockSorter()
+        app.run(sys.argv[minNumberOfArguments])
+    else:
+        print("Received {}/{} required argument(s). Program will exit now.".format(len(sys.argv) - 1, minNumberOfArguments))
+
