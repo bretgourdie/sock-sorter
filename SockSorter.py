@@ -19,16 +19,19 @@ class SockSorter():
         templateSock = self.getTemplateSock()
         numberOfSocks = int(strNumSocks)
 
-        pile = basket.dumpPile(numberOfSocks, templateSock)
+        basePile = basket.dumpPile(numberOfSocks, templateSock)
 
         for sortingMethod in SortingMethod.getAllMethods():
             sorter = sortingMethod()
 
-            sortedPile = sorter.timedSort(pile)
+            pileToSort = list(basePile)
+
+            sortedPile = sorter.timedSort(pileToSort)
 
             if self.printMatches():
                 for pair in sortedPile:
                     print("Pair: {}<->{}".format(pair[0], pair[1]))
+
 
 if __name__ == "__main__":
     minNumberOfArguments = 1
