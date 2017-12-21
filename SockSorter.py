@@ -2,11 +2,13 @@ import SockEnums
 from Basket import Basket
 from Sock import Sock
 from SelectionSort import SelectionSort
+from HashSort import HashSort
 
 class SockSorter():
 
     def getSortingMethod(self):
-        return SelectionSort()
+        #return SelectionSort()
+        return HashSort()
 
     def getNumberOfSocks(self):
         return 10000
