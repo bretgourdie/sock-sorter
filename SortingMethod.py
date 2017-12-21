@@ -2,6 +2,9 @@ import abc
 from datetime import datetime
 
 class SortingMethod(abc.ABC):
+    def getAllMethods():
+        return SortingMethod.__subclasses__()
+
     @abc.abstractmethod
     def sort(self, sockPile):
         pass

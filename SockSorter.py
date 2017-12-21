@@ -3,12 +3,9 @@ from Basket import Basket
 from Sock import Sock
 from SelectionSort import SelectionSort
 from HashSort import HashSort
+from SortingMethod import SortingMethod
 
 class SockSorter():
-
-    def getSortingMethod(self):
-        #return SelectionSort()
-        return HashSort()
 
     def getNumberOfSocks(self):
         return 10000
@@ -27,13 +24,14 @@ class SockSorter():
 
         pile = basket.dumpPile(numberOfSocks, templateSock)
 
-        sorter = self.getSortingMethod()
+        for sortingMethod in SortingMethod.getAllMethods():
+            sorter = sortingMethod()
 
-        sortedPile = sorter.timedSort(pile)
+            sortedPile = sorter.timedSort(pile)
 
-        if self.printMatches():
-            for pair in sortedPile:
-                print("Pair: {}<->{}".format(pair[0], pair[1]))
+            if self.printMatches():
+                for pair in sortedPile:
+                    print("Pair: {}<->{}".format(pair[0], pair[1]))
 
 if __name__ == "__main__":
     app = SockSorter()
