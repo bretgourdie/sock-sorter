@@ -7,7 +7,8 @@ class SortingMethod(abc.ABC):
         pass
 
     def reportDuration(self, startTime, endTime):
-        print("Sort time: {} to {}; {}".format(startTime, endTime, (endTime - startTime).total_seconds()))
+        className = self.__class__.__name__
+        print("Sort time for {}: {} to {}; {}".format(className, startTime, endTime, (endTime - startTime).total_seconds()))
 
     def timedSort(self, sockPile):
         start = datetime.now()
