@@ -1,30 +1,33 @@
 from SortingMethod import SortingMethod
 from Sock import Sock
+from collections import defaultdict
 
 class HashSort(SortingMethod):
     
     def sort(self, sockPile):
         sortedPile = []
 
-        dPile = {}
+        dColorPiles = {}
 
+        # Generate color piles
         for sock in sockPile:
-            if sock.color not in dPile:
-                dPile[sock.color] = []
-            dPile[sock.color].append(sock)
+            if sock.color not in dColorPiles:
+                dColorPiles[sock.color] = []
+            dColorPiles[sock.color].append(sock)
 
-        for color in dPile:
-            coloredSockPile = dPile[color]
+        # Match in each pile
+        for color in dColorPiles:
+            coloredSockPile = dColorPiles[color]
 
             while len(coloredSockPile) > 0:
                 leftSock = coloredSockPile.pop(0)
 
                 rightSock = Sock()
                 while leftSock != rightSock:
-                    rightSock = sockPile.pop(0)
+                    rightSock = coloredSockPile.pop(0)
 
                     if leftSock != rightSock:
-                        sockPile.append(rightSock)
+                        coloredSockPile.append(rightSock)
 
                 sortedPile.append((leftSock, rightSock))
 
