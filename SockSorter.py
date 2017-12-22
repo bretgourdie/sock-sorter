@@ -1,4 +1,4 @@
-import SockEnums, sys
+import SockTraits, sys
 from Basket import Basket
 from Sock import Sock
 from SelectionSort import SelectionSort
@@ -8,7 +8,7 @@ from SortingMethod import SortingMethod
 class SockSorter():
 
     def getTemplateSock(self):
-        return Sock(None, SockEnums.Length.Ankle, SockEnums.Material.Cotton, SockEnums.Pattern.Plain, SockEnums.Size.Medium)
+        return Sock(None, SockTraits.Length.Ankle, SockTraits.Material.Cotton, SockTraits.Pattern.Plain, SockTraits.Size.Medium)
 
     def printMatches(self):
         return False

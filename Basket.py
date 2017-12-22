@@ -1,11 +1,11 @@
 from Sock import Sock
 from copy import copy
-import inspect, SockEnums, random
+import inspect, SockTraits, random
 
 class Basket:
 
     def getRandomEnum(self, propertyName):
-        for name, obj in inspect.getmembers(SockEnums):
+        for name, obj in inspect.getmembers(SockTraits):
             if inspect.isclass(obj) and propertyName.title() == name:
                 return random.choice(list(obj))
 
