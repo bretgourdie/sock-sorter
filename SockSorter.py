@@ -1,8 +1,8 @@
 import SockTraits, sys
 from Basket import Basket
 from Sock import Sock
-from SelectionSort import SelectionSort
-from HashSort import HashSort
+from PairSort import PairSort
+from PileSort import PileSort
 from SortingMethod import SortingMethod
 
 class SockSorter():

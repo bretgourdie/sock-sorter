@@ -2,7 +2,7 @@ from SortingMethod import SortingMethod
 from Sock import Sock
 from collections import defaultdict
 
-class HashSort(SortingMethod):
+class PileSort(SortingMethod):
     
     def sort(self, sockPile):
         sortedPile = []

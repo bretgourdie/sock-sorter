@@ -1,7 +1,7 @@
 from Sock import Sock
 from SortingMethod import SortingMethod
 
-class SelectionSort(SortingMethod):
+class PairSort(SortingMethod):
 
     def sort(self, sockPile):
         
