@@ -22,8 +22,9 @@ class SortingMethod(abc.ABC):
         )
 
     def timedSort(self, sockPile):
+        copiedSockPile = list(sockPile)
         start = datetime.now()
-        sortedPile = self.sort(sockPile)
+        sortedPile = self.sort(copiedSockPile)
         end = datetime.now()
         self.reportDuration(start, end)
         return sortedPile

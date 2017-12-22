@@ -25,14 +25,12 @@ class SockSorter():
         templateSock = self.getTemplateSock()
         numberOfSocks = int(strNumSocks)
 
-        basePile = basket.dumpPile(numberOfSocks, templateSock)
+        sockPile = basket.dumpPile(numberOfSocks, templateSock)
 
         for sortingMethod in SortingMethod.getAllMethods():
             sorter = sortingMethod()
 
-            pileToSort = list(basePile)
-
-            sortedPile = sorter.timedSort(pileToSort)
+            sortedPile = sorter.timedSort(sockPile)
 
             if self.printMatches():
                 for pair in sortedPile:
