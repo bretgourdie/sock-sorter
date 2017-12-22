@@ -11,7 +11,15 @@ class SortingMethod(abc.ABC):
 
     def reportDuration(self, startTime, endTime):
         className = self.__class__.__name__
-        print("Sort time for {}: {} to {}; {}".format(className, startTime, endTime, (endTime - startTime).total_seconds()))
+        print(
+            "Sort time for {}: {} seconds ({} to {})"
+            .format(
+                className,
+                (endTime - startTime).total_seconds(),
+                startTime,
+                endTime
+            )
+        )
 
     def timedSort(self, sockPile):
         start = datetime.now()
