@@ -11,6 +11,6 @@ class Sock:
         return self.__dict__ == other.__dict__
 
     def __repr__(self):
-        strSock = "Sock: {}; {}; {}, {}, {}".format(self.color, self.length, self.material, self.pattern, self.size)
+        strSock = "Sock: {}; {}; {}; {}; {}".format(self.color, self.length, self.material, self.pattern, self.size)
 
         return strSock
