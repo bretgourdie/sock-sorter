@@ -4,7 +4,7 @@ import inspect, SockTraits, random
 
 class Basket:
 
-    def getRandomEnum(self, propertyName):
+    def getRandomTrait(self, propertyName):
         for name, obj in inspect.getmembers(SockTraits):
             if inspect.isclass(obj) and propertyName.title() == name:
                 return random.choice(list(obj))
@@ -13,7 +13,7 @@ class Basket:
         sock = Sock()
 
         for property, value in vars(templateSock).items():
-            setattr(sock, property, value or self.getRandomEnum(property))
+            setattr(sock, property, value or self.getRandomTrait(property))
 
         return sock
 
