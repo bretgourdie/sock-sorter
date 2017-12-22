@@ -8,7 +8,13 @@ from SortingMethod import SortingMethod
 class SockSorter():
 
     def getTemplateSock(self):
-        return Sock(None, SockTraits.Length.Ankle, SockTraits.Material.Cotton, SockTraits.Pattern.Plain, SockTraits.Size.Medium)
+        return Sock(
+            None,
+            SockTraits.Length.Ankle,
+            SockTraits.Material.Cotton,
+            SockTraits.Pattern.Plain,
+            SockTraits.Size.Medium
+        )
 
     def printMatches(self):
         return False
@@ -39,5 +45,11 @@ if __name__ == "__main__":
         app = SockSorter()
         app.run(sys.argv[minNumberOfArguments])
     else:
-        print("Received {}/{} required argument(s). Program will exit now.".format(len(sys.argv) - 1, minNumberOfArguments))
+        print(
+            "Received {}/{} required argument(s). Program will exit now."
+            .format(
+                len(sys.argv) - 1,
+                minNumberOfArguments
+            )
+        )
 
