@@ -1,7 +1,7 @@
 from enum import Enum, auto
 
 class Color(Enum):
-    White = auto()
+    White = auto(),
     Blue = auto(),
     Yellow = auto(),
     Black = auto(),
